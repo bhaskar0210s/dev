@@ -19,6 +19,12 @@ jobs:
 
       #sqlite needed for laravel database
       #nodejs6 needed to run `npm run watch` later
+        
+      - run:
+         name: Write permissions for storage and bootstrapCache
+         command: sudo chmod -R 777 storage  | sudo chmod -R 777 bootstrap/cache
+
+
       - run:
          name: Install PHP sqlite and nodejs 6
          command: sudo apt-get install -y libsqlite3-dev nodejs
