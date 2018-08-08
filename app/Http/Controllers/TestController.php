@@ -10,5 +10,6 @@ class TestController extends Controller
     {
         $file = $request->file;
         dd($file);
+        return ['success' => true];
     }
 }
