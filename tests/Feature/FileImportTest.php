@@ -1,5 +1,5 @@
 <?php
-
+namespace Tests\Feature;
 use Illuminate\Http\UploadedFile;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
@@ -26,7 +26,7 @@ class FileImportTest extends TestCase
         // dd($file);
         $response = $this->json('POST', '/customers/import', ['file' => $file]);
         dd($response);
-        $this->assertResponseOk();
+        $response->assertStatus(200);
 
         // $this->seeInDatabase('customers', [
         //     'name' => 'Thor',
